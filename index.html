@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>Google Search</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		.image1
+		{
+			height:92px; 
+			width:272px; 
+			padding-top:109px;
+			margin-top:47px;
+			margin-left:550px;
+			margin-right:530px;
+			padding-bottom: 20px;
+		}
+		.outsidebox
+		{
+			background: #fff;
+			display: flex;
+			border: 1px solid #dfe1e5;
+			box-shadow: none;
+			border-radius: 24px;
+			z-index: 3;
+			height: 44px;
+			margin: 0 auto;
+			width: 582px;
+		}
+		.outsidebox:hover
+		{
+			box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+		}
+		.containbox
+		{
+			flex: 1;
+			display: flex;
+			padding: 5px 8px 0 14px;
+		}
+		.searchiconbox
+		{
+			display: flex;
+			align-items: center;
+			padding-right: 13px;
+			margin-top: -5px;
+		}
+		.icon
+		{
+			padding: 10px;
+			background: #fff0;
+			color: #bdafaf;
+			width: 20px;
+			text-align: center;
+			height: 20px;
+		}
+		.outinputbox
+		{
+			display: flex;
+			flex: 1;
+			flex-wrap: wrap;
+			width:487px;
+		}
+		.inputdiv
+		{
+			color: transparent;
+			flex: 100%;
+			white-space: pre;
+			height: 34px;
+		}
+		.inputbox
+		{
+			background-color: transparent;
+			border: none;
+			margin: 0;
+			padding: 0;
+			color: rgba(0,0,0,.87);
+			word-wrap: break-word;
+			outline: none;
+			display: flex;
+			flex: 100%;
+			tap-highlight-color: transparent;
+			margin-top: -37px;
+			height: 34px;
+			font-size: 16px;
+		}
+		.searchbuttonbox
+		{
+			display: flex;
+			flex: 0 0 auto;
+			margin-top: -5px;
+			align-items: stretch;
+			flex-direction: row;
+		}
+		.image2
+		{
+		    padding-left: 10px;
+			height: 11px;
+			padding-top: 15px;
+		}
+		.container2
+		{
+			width:571px;
+			height:70px;
+			padding-top:18px;
+			margin:auto;
+		}
+		.searchbutton
+		{
+			background-color: #f2f2f2;
+			border: 1px solid #f2f2f2;
+			border-radius: 4px;
+			color: #5F6368;
+			font-family: arial,sans-serif;
+			font-size: 14px;
+			margin: 11px 4px;
+			padding: 0 16px;
+			line-height: 27px;
+			height: 36px;
+			min-width: 54px;
+			text-align: center;
+			cursor: pointer;
+			user-select: none;
+		}
+		.doodlebutton
+		{
+			background-color: #f2f2f2;
+			border: 1px solid #f2f2f2;
+			border-radius: 4px;
+			color: #5F6368;
+			font-family: arial,sans-serif;
+			font-size: 14px;
+			margin: 11px 4px;
+			padding: 9px 16px;
+			height: 37px;
+			min-width: 54px;
+			text-align: center;
+			cursor: pointer;
+			text-decoration:none;
+			user-select: none;
+		}
+		.searchbutton:hover, .doodlebutton:hover
+		{
+			box-shadow:0px 0px 1px 1px rgba(32,33,36,0.33);
+		}
+		.menu
+		{
+			position: relative;
+			float:right;
+			width:200px;
+			height:30px;
+			padding-left: 30px;
+			padding-right: 30px;
+			text-align: right;
+		}
+		.imagemenu
+		{
+			float:left;
+			padding:10px 0 10px 0;
+		}
+		.advancesearchmenu
+		{
+			float:left;
+			padding:10px 10px 10px 10px;
+		}
+		.element0
+		{
+			color: rgba(0,0,0,0.87);
+			text-decoration: none;
+			font-family: arial,sans-serif;
+			font-size: 13px;
+			padding-left:27px;
+		}
+		.element0:hover
+		{
+			text-decoration:underline;
+		}
+		.element
+		{
+			color: rgba(0,0,0,0.87);
+			text-decoration: none;
+			font-family: arial,sans-serif;
+			font-size: 14px;
+			padding-left:27px;
+		}
+		.element:hover
+		{
+			text-decoration:underline;
+		}
+		.footer
+		{
+			position:fixed;
+			width:100%;
+			left:0;
+			bottom:0;
+			background: #f2f2f2;
+			line-height: 40px;
+			min-width: 980px;
+			border-top: 1px solid #e4e4e4;
+		}
+		.ufooter
+		{
+			border-bottom: 1px solid #e4e4e4;
+			font-size:14px;
+		}
+		#span2
+		{
+			float: right;
+			margin-right: 30px;
+		}
+		#popupmenu
+		{
+			display: inline-block;
+			position: relative;
+		}
+		.dropdown-content
+		{	
+			display:none;
+			border: 1px solid #999;
+			bottom: 30px;
+			left:-109px;
+			padding: 10px 0;
+			text-align: left;
+			position:absolute;
+			background: #fff;
+			min-width: 160px;
+			overflow:auto;	
+			box-shadow: 0 2px 4px rgba(0,0,0,.2);
+			z-index: 128;
+		}
+		.dropbtn
+		{
+			border:none;
+			cursor:pointer;
+			color: rgba(0,0,0,0.87);
+			text-decoration: none;
+			font-family: arial,sans-serif;
+			font-size: 13px;
+			padding-left:27px;
+		}
+		.dropbtn:hover
+		{
+			text-decoration:underline;
+		}
+		.element1
+		{
+			display: block;
+			line-height: 44px;
+			margin: 2px 10px 0;
+			padding: 0 20px;
+			text-decoration: none;
+			color: #222;
+			font-family: arial,sans-serif;
+			font-size: 14px;
+		}
+		.element1:hover
+		{
+			text-decoration:underline;
+		}
+		.element2
+		{
+			display: block;
+			line-height: 44px;
+			margin: 2px 10px 0;
+			padding: 0 20px;
+			text-decoration: none;
+			color: rgba(0,0,0,0.87);
+			font-family: arial,sans-serif;
+			font-size: 14px;
+		}
+		.show
+		{
+		display:block;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="menu">
+		<div class="imagemenu">
+			<a href="images.html" class="element0">Images</a>
+		</div>
+		
+		<div class="imagemenu">
+			<a href="advance.html" class="element0">Advance Search</a>
+		</div>
+	</div>
+	
+	<img src="google.png" alt="google" class="image1"/>
+	
+    <form action="https://google.com/search" style="width: 1139px;height:140px;margin:auto">
+		
+		<div class="div1" style="text-align:center;">
+			
+			<div class="outsidebox">
+				
+				<div class="containbox">
+				
+					<div class="searchiconbox" style="width:20px">
+						<i class="fa fa-search icon"></i>
+
+					</div>
+						<div class="outinputdiv" style="width:487px">
+							<div class="inputdiv">
+								<input type="text" class="inputbox" name="q" style="width:487px;">
+							</div>
+						</div>
+					<div class="searchbuttonbox">
+						<a href="#"><img src="tia.png" class="image2"></a>
+					</div>
+					
+				</div>
+			
+			</div>
+			
+			<div class="container2">
+				<center>
+					<input type="submit" value="Google Search" class="searchbutton" name="btnK">
+					<button type="submit" value="I'm Feeling Lucky" class="doodlebutton" name="btnI">I'm Feeling Lucky</button>
+				</center>
+			</div>
+		</div>
+    </form>
+	
+	<div class="footer">
+	
+		<div class="ufooter">
+					<span style="padding-left:27px;">India</span>
+		</div>
+					<span id="span2">
+						<a href="https://policies.google.com/privacy" class="element">Privacy</a>
+						<a href="https://policies.google.com/terms" class="element">Terms</a>	
+						
+						<span id="popupmenu">
+							<button class="dropbtn" onclick="myFunction()">Settings</button>
+							<span id="myDropdown" class="dropdown-content" >
+								<a class="element2">Search settings</a>
+								<a href="https://myactivity.google.com/privacyadvisor/search" class="element1">Your data in Search</a>
+								<a href="https://myactivity.google.com/item" class="element1">Search activity</a>
+								<a href="https://support.google.com/websearch" class="element1">Search help</a>
+								<a href="" class="element1">Send feedback</a>
+							</span>
+						</span>
+					</span>
+					
+					<span id="span3">
+						<a href="https://ads.google.com/intl/en_in/home" class="element">Advertising</a>
+						<a href="https://www.google.co.in/services" class="element">Business</a>
+						<a href="https://about.google" class="element">About</a>	
+						<a href="https://www.google.com/search/howsearchworks" class="element">How Search works</a>
+					</span>
+	</div>
+<script>
+	/* When the user clicks on the button, 
+	toggle between hiding and showing the dropdown content */
+	function myFunction() 
+	{
+	  document.getElementById("myDropdown").classList.toggle("show");
+	}
+
+	// Close the dropdown if the user clicks outside of it
+	window.onclick = function(event) 
+	{
+	  if (!event.target.matches('.dropbtn')) 
+	  {
+		var dropdowns = document.getElementsByClassName("dropdown-content");
+		var i;
+		for (i = 0; i < dropdowns.length; i++) 
+		{
+		  var openDropdown = dropdowns[i];
+		  if (openDropdown.classList.contains('show')) 
+		  {
+			openDropdown.classList.remove('show');
+		  }
+		}
+	  }
+	}
+</script>
+</body>
+</html>
